@@ -51,21 +51,19 @@ const Todo = () => {
           </label>
         </div>
       </div>
-      <div className="bg-slate-600 flex justify-between p-4 rounded-md mt-2 w-[70%] mx-auto overflow-y-auto h-[300px]">
-        <div>
-          {getTodos?.map((todo, index) => (
-            <div key={index}>{todo.taskText}</div>
-          ))}
-        </div>
-        <div className="">
-          {getTodos?.map((item) => (
+      <div className="mx-auto bg-slate-600 flex flex-wrap justify-center p-4 rounded-md mt-2 w-[70%]">
+        {getTodos?.map((todo, index) => (
+          <div
+            key={index}
+            className="flex justify-between bg-slate-800 p-4 rounded-md m-2 w-[30%]"
+          >
+            <div>{todo.taskText}</div>
             <IoTrashBin
-              key={item.id}
-              className="hover:text-red-600 cursor-pointer text-xl active:text-red-800"
-              onClick={() => deleteTodo(item.id)}
+              className="mt-1 hover:text-red-600 cursor-pointer text-xl active:text-red-800"
+              onClick={() => deleteTodo(todo.id)}
             />
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </div>
   );

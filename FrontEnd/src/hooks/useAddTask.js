@@ -39,7 +39,7 @@ const useAddTodo = () => {
       // Check if the transaction was successful
       if (receipt.status) {
         getMyTasks();
-        return toast.success("Registration successful!", {
+        toast.success(`Task "${title}" added successfully!`, {
           position: "top-right",
         });
       }
